@@ -1,0 +1,67 @@
+{% extends 'courses/course_base.html' %}
+
+{% block title %} 
+    Course List 
+{% endblock title %}
+
+{% block course_header %}
+    {% if user.is_authenticated %}
+    <div class="course_header_container">
+        <div class="container">
+            <div class="course_header_container">
+                <div>
+                    <h1 class="course_heading_white">{{request.user.username}} Course List</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="course_header_container">
+            <div class="container">
+                <div class="course_header_container">
+                    <div>
+                        <h1 class="course_heading_white">Various Courses for Coding</h1>
+
+                        <p class="course_header_p">GET IT teams are all experienced developers,<br>
+                            We know how to learn and what to do.<br>
+                            Our best tutorials has variery with many good sourse.
+                        </p>
+                    </div>
+                        <div>
+                            <a class="course_btn_post" href="#">
+                                Get Start Studing</a>
+                        </div>    
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block course_content %}
+    <section class="container">
+        <div class="course_container">
+
+            <h1 class="course_heading">
+                {% if user.is_authenticated %}
+                    {{ user.username }}'s 
+                {% endif %}  
+                    Course Detail</h1>
+            {% for course in courses %}
+
+                {% include 'components/course_card.html' %}    
+                
+            {% endfor %}
+
+            {% if user.is_authenticated %}
+                {% for group in user.groups.all %}
+                    {% if group.name == "Developer" %}
+                            <h3 class="course_add_link">
+                                <a href="{% url 'course_new' %}"><i class="fas fa-plus-circle" id="orange"></i> Add New Course</a>
+                            </h3>
+                    {% endif %}
+                {%endfor%}
+                
+            {% endif %}
+        </div>
+    </section>
+{% endblock course_content %}

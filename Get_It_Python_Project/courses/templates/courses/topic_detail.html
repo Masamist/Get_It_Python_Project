@@ -1,0 +1,65 @@
+{% extends 'courses/course_base.html' %}
+
+
+{% block title %} 
+    Topic Detail
+{% endblock title %} 
+
+{% block course_header %}
+    <div class="course_header_container">
+        <div class="container">
+            <div class="course_header_container">
+                <div>
+                    <h1 class="course_heading_white">#Python Beginners</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block course_content %}
+<section class="container">
+    <div class="course_container">   
+        <div class="course_content_container">
+            <div class="course_course_intro_container">
+                <h1 class="course_heading">{{ topic.name }}</h1>
+                <p class="course_border"><p>
+            </div>
+
+            <p class="course_detail_p"> {{ topic.intro }} </p>
+
+            <h2 class="course_detail_title"> {{ course.howHeading }}</h2>
+            <p class="course_detail_p"> {{ course.howDescription }} </p>
+    
+
+            <h2 class="course_detail_title" style="margin-bottom:10px">{{ course.name }} Topics:</h2>
+            
+            <div class="course_detail_flex">
+                {% for c in content %}
+                
+                    {% include 'components/content_card.html' %}
+        
+                {% endfor %}
+                <div> 
+
+            {% if user.is_authenticated %}
+                {% for group in user.groups.all %}
+                    {% if group.name == "Developer" %}
+                        <h3 class="course_add_link">
+                            <a href="{% url 'topic_edit' topic.pk %}">
+                                <i class="fas fa-edit" id="purple"></i> Edit Topic
+                            </a>
+                        </h3>  
+                        <h3 class="course_add_link">
+                            <a href="{% url 'topic_delete' topic.pk %}">
+                                <i class="fas fa-trash-alt" id="orange"></i> Delete Topic
+                            </a>
+                        </h3> 
+                    {% endif %}
+                {%endfor%}
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+{% endblock course_content %}

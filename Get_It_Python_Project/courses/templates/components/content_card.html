@@ -1,0 +1,16 @@
+<div class="card_course_topic_container">
+    
+    <h3 class="topic_name">
+        <a href="{% url 'content_detail' pk=c.id %}">{{c.name}}</a>
+    </h3>
+    
+    <div class="topic_container">
+        <span class="course_progressbar_title"><i class="far fa-clock" id="purple"></i> {{ c.minutesToComplete }} min</span>
+        <span class="course_progressbar_title" style="padding-left:10px"><i class="fas fa-star" id="purple"></i> Progress: {{c.template_user_result}}/{{ c.count_questions }}</span>
+        <br>
+    </div>
+ 
+</div>
+
+    
+    

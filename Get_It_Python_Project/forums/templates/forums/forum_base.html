@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} 
+    Q&amp;A forum
+{% endblock title %} 
+
+
+{% block content %}
+
+<!-- Q&A Header -->
+    {% block forum_header %}{% endblock %}
+
+<!-- Q&A contents -->
+<div class="container">
+    {% block form_content %}{% endblock %}
+    <div class="forum_main_flex">
+        <div class="forum_main_flex_contents">
+            {% block preforum %}{% endblock %}
+            {% block forum_content %}{% endblock %}
+            {% block post_content %}{% endblock %}
+        </div>
+        <div class="forum_main_flex_category">
+            {% block category %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

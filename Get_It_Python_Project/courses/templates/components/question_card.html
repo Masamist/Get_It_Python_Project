@@ -1,0 +1,66 @@
+<!-- Question Card -->
+<div class="card_question">
+    <div>
+        <div style="float:right;">
+            <a style="color:#9c62d1" href="#">Delete</a>
+        </div>
+        <div style="float:right;margin-right:10px;">
+            <a style="color:#9c62d1" href="#">Edit</a>
+        </div>
+    </div>
+
+    <h2 class="course_detail_title">Question:</h2>
+        <h3 class="content_question">
+            {{question.question}}
+        </h3>
+        <div class="btn_question_position_center">
+            <button id="true_{{question.id}}" type="button" value="True" class="btn_question" style="background-color:#41ab48">
+                True
+            </button>
+            <button id="false_{{question.id}}" type="button" value="True" class="btn_question" style="background-color:#d13e36">
+                False
+            </button>
+        </div>
+    <div class="result_container">
+
+    <p id="feedback_{{question.id}}" class="result"><i
+    {% for result in user_results %}
+        {% if result.question == question %}
+            {% if result.result %}
+                 class="far fa-check-circle" style="color:#41ab48"
+            {% else %}
+                 class="far fa-times-circle" style="color:#d13e36"
+            {% endif %}
+        {% endif %}
+    {% endfor %} 
+    ></i> </p>
+    </div>
+</div>
+
+<script>
+    $("#true_{{question.id}}").click(function () {
+         $.ajax({
+             type: "POST",
+             url: "{% url 'answer_true' id=question.id pk=content.id %}",
+             data: { 'csrfmiddlewaretoken': '{{csrf_token}}' },
+             dataType: "json",
+             success: function (r) { $("#feedback_{{question.id}}").find("i").attr("class", r.result_is_correct ? "far fa-check-circle" : "far fa-times-circle");
+                                        $("#feedback_{{question.id}}").find("i").attr("style",  r.result_is_correct ? "color:#41ab48" : "color:#d13e36"); },
+             error: function (rs, e) { alert("Failure!!!!")}
+             });
+         })
+        
+    
+
+    $("#false_{{question.id}}").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "{% url 'answer_false' id=question.id pk=content.id %}",
+            data: { 'csrfmiddlewaretoken': '{{csrf_token}}' },
+            dataType: "json",
+            success: function (r) { $("#feedback_{{question.id}}").find("i").attr("class", r.result_is_correct ? "far fa-check-circle" : "far fa-times-circle");
+                                        $("#feedback_{{question.id}}").find("i").attr("style",  r.result_is_correct ? "color:#41ab48" : "color:#d13e36"); },
+            error: function (rs, e) { alert("Failure!!!!")}
+            });
+        })
+ </script>
