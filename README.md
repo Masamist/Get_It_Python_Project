@@ -1,6 +1,7 @@
 # Get It Python Project
 ##### Agile and Django group project in Whitecliffe.
 
+
 ## What is Get It Python  Project?
 
 This App will solve a problem that has prevailed in our education system for far too long and bring the power of programming to the masses. 
@@ -11,6 +12,7 @@ Thus, a growing pool of developers to build Software is required. however, the c
 for most people due to prohibitive costs and the long-term commitment required when enrolled as a student in an institute. 
 Our App can offer an alternative for many, by providing an Online content tutorial that enables users to learn code in their own time and pace, 
 we can provide an alternative entry point, allowing many who would otherwise be unable to join this growing industry.
+
 
 ## What tools are used for this project?
 
