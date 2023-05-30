@@ -2,7 +2,7 @@
 ![Get IT Python](https://github.com/Masamist/Get_It_Python_Project/blob/main/getit.png)
 
 ## Introduction
-I would like to introduce my web projects, that I enjoyed creating. On top of the focus on coding I was lucky to solely do the UX design for all the projects. Furthermore, utilising the process and procedures of agile prot, jecacting in the role of scrum master, developer, tester, business analyst, financial staff or even project manager. Each project demonstrates my achievements, growing skills, and opportunities for further growth.
+GET IT Python is an enterprise application that is a coding tutorial application for users on how to code. The first iteration was focused on Python (hence its name Get IT Python), consequentially adding more programming languages. The original requirement was a mobile app, then we persuaded the client, that is our lecturer, to use PWA (Progressive Web App) to enable access from any device via a browser or a downloaded app. The free version is for absolute beginner level, the subscription version for junior developers and above is an effective tool for searching syntax or capabilities.
 
 ## Project Overview
 This App will solve a problem that has prevailed in our education system for far too long and brings the power of programming to the masses. 
@@ -14,6 +14,8 @@ for most people due to prohibitive costs and the long-term commitment required w
 Our App can offer an alternative for many, by providing an Online content tutorial that enables users to learn code in their own time and pace, 
 we provide an alternative entry point, allowing many who would otherwise be unable to join this growing industry.
 
+## Summary
+This project was such a great opportunity to learn about Agile project management and building a secure app with the Django web framework. In a group working together I had a turn at each role using agile project tools for agile management. My role for building the application was UI designer and front-end developer, I created the home, about page and acting as a tester to make several unit tests, UAT testing, cross-browser testing. Also, I coded the whole social Q&A page which was a great opportunity to create a social interactive page.
 
 ## Technologies
 + Django
