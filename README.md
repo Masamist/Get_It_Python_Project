@@ -18,13 +18,11 @@ we provide an alternative entry point, allowing many who would otherwise be unab
 This project was such a great opportunity to learn about Agile project management and building a secure app with the Django web framework. In a group working together I had a turn at each role using agile project tools for agile management. My role for building the application was UI designer and front-end developer, I created the home, about page and acting as a tester to make several unit tests, UAT testing, cross-browser testing. Also, I coded the whole social Q&A page which was a great opportunity to create a social interactive page.
 
 ## Technologies
-+ Django
++ Django v4.1
 + HTML
 + CSS
 + JavaScript
-+ Bootstrap
-+ Agile project methodology
-
++ Django Bootstrap 3.22.1
 
 ## Link
 [Get IT Python Link](https://masamist.pythonanywhere.com/)
